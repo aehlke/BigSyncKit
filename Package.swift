@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "SyncKit",
+    name: "BigSyncKit",
     platforms: [
         .macOS(.v10_12),
         .iOS(.v11),
@@ -10,30 +10,16 @@ let package = Package(
         .watchOS(.v3)
     ],
     products: [
-        .library(name: "SyncKit/CoreData", targets: ["SyncKit/CoreData"]),
-        .library(name: "SyncKit/Realm", targets: ["SyncKit/Realm"]),
-        .library(name: "SyncKit/RealmSwift", targets: ["SyncKit/RealmSwift"])],
+        .library(name: "BigSyncKit/RealmSwift", targets: ["BigSyncKit/RealmSwift"])],
     dependencies: [
-        .package(url: "https://github.com/realm/realm-cocoa", from: "10.5.2")
+        .package(url: "https://github.com/realm/realm-cocoa", from: "10.7.7")
     ],
     targets: [
         .target(
-            name: "SyncKit/CoreData",
-            dependencies: [],
-            path: ".",
-            sources: ["SyncKit/Classes/CoreData"]
-        ),
-         .target(
-            name: "SyncKit/Realm",
-            dependencies: ["Realm"],
-            path: ".",
-            sources: ["SyncKit/Classes/Realm"]
-        ),
-        .target(
-            name: "SyncKit/RealmSwift",
+            name: "BigSyncKit/RealmSwift",
             dependencies: ["RealmSwift", "Realm"],
             path: ".",
-            sources: ["SyncKit/Classes/RealmSwift"]
+            sources: ["BigSyncKit/RealmSwift"]
         )
     ],
     swiftLanguageVersions: [.v5]

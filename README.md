@@ -1,4 +1,15 @@
-# SyncKit
+# BigSyncKit
+
+Synchronize RealmSwift databases with CloudKit.
+
+Fork of [mentrena's SyncKit](https://mentrena.github.io/SyncKit) for these reasons:
+
+- Scales to larger Realm databases
+
+The downsides that were traded off to achieve this:
+- Gives up ability to use fine-grained changed properties notifications to resolve merge conflicts. This was not a default behavior in SyncKit but could be enabled via the `client` merge policy.
+- Removes CoreData support in order to simplify maintenance needed for this fork, and because it can better focus on the primary use case of this fork.
+- Requires using isDeleted soft-deletes for reliable deletion sync. Yet unverified whether hard deletion is possible.
 
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/mentrena/synckit/Test/master)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)

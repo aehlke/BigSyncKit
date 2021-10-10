@@ -34,4 +34,6 @@ Carthage
 # `pod install` in .travis.yml
 #
 
+*.swp
+
 Pods/

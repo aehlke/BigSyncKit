@@ -13,8 +13,6 @@ import CloudKit
     
     /// Downloaded changes have preference.
     case server
-    /// Local changes have preference.
-    case client
     /// Delegate can resolve changes manually.
     case custom
 }

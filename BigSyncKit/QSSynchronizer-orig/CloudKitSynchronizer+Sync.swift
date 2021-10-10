@@ -140,7 +140,6 @@ extension CloudKitSynchronizer {
     }
     
     func isLimitExceededError(_ error: NSError) -> Bool {
-        
         if error.code == CKError.partialFailure.rawValue,
             let errorsByItemID = error.userInfo[CKPartialErrorsByItemIDKey] as? [CKRecord.ID: NSError],
             errorsByItemID.values.contains(where: { (error) -> Bool in
@@ -154,7 +153,6 @@ extension CloudKitSynchronizer {
     }
     
     func sequential<T>(objects: [T], closure: @escaping (T, @escaping (Error?)->())->(), final: @escaping  (Error?)->()) {
-        
         guard let first = objects.first else {
             final(nil)
             return
@@ -206,7 +204,6 @@ extension CloudKitSynchronizer {
     }
     
     func fetchDatabaseChanges(completion: @escaping (CKServerChangeToken?, Error?) -> ()) {
-        
         let operation = FetchDatabaseChangesOperation(database: database, databaseToken: serverChangeToken) { (token, changedZoneIDs, deletedZoneIDs) in
             self.dispatchQueue.async {
                 self.notifyProviderForDeletedZoneIDs(deletedZoneIDs)
@@ -240,7 +237,6 @@ extension CloudKitSynchronizer {
     }
     
     func fetchZoneChanges(_ zoneIDs: [CKRecordZone.ID], completion: @escaping (Error?)->()) {
-        
         let operation = FetchZoneChangesOperation(database: database, zoneIDs: zoneIDs, zoneChangeTokens: activeZoneTokens, modelVersion: compatibilityVersion, ignoreDeviceIdentifier: deviceIdentifier, desiredKeys: nil) { (zoneResults) in
             
             self.dispatchQueue.async {
@@ -250,12 +246,9 @@ extension CloudKitSynchronizer {
                 for (zoneID, result) in zoneResults {
                     let adapter = self.modelAdapterDictionary[zoneID]
                     if let resultError = result.error {
-                        if (self.isZoneNotFoundOrDeletedError(error))
-                        {
+                        if (self.isZoneNotFoundOrDeletedError(error)) {
                             self.notifyProviderForDeletedZoneIDs([zoneID])
-                        }
-                        else
-                        {
+                        } else {
                             error = resultError
                             break
                         }
@@ -319,7 +312,6 @@ extension CloudKitSynchronizer {
 // MARK: - Upload changes
 
 extension CloudKitSynchronizer {
-    
     func uploadChanges() {
         guard cancelSync == false else {
             finishSynchronization(error: SyncError.cancelled)
@@ -344,7 +336,6 @@ extension CloudKitSynchronizer {
     }
     
     func uploadChanges(completion: @escaping (Error?)->()) {
-        
         sequential(objects: modelAdapters, closure: setupZoneAndUploadRecords) { (error) in
             guard error == nil else { completion(error); return }
             
@@ -354,7 +345,6 @@ extension CloudKitSynchronizer {
     
     func setupZoneAndUploadRecords(adapter: ModelAdapter, completion: @escaping (Error?)->()) {
         setupRecordZoneIfNeeded(adapter: adapter) { (error) in
-            
             guard error == nil else {
                 completion(error)
                 return
@@ -402,7 +392,6 @@ extension CloudKitSynchronizer {
             delegate?.synchronizerWillUploadChanges(self, to: adapter.recordZoneID)
         }
         
-        
         //Add metadata: device UUID and model version
         addMetadata(to: records)
         
@@ -441,7 +430,6 @@ extension CloudKitSynchronizer {
     }
     
     func uploadDeletions(adapter: ModelAdapter, completion: @escaping (Error?)->()) {
-        
         let recordIDs = adapter.recordIDsMarkedForDeletion(limit: batchSize)
         let recordCount = recordIDs.count
         let requestedBatchSize = batchSize
@@ -502,7 +490,6 @@ extension CloudKitSynchronizer {
     }
     
     func updateServerToken(for recordZoneIDs: [CKRecordZone.ID], completion: @escaping (Bool)->()) {
-        
         // If we found a new record zone at this point then needsToFetchChanges=true
         var hasAllTokens = true
         for zoneID in recordZoneIDs {

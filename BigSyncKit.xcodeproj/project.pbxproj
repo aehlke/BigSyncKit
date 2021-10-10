@@ -87,6 +87,7 @@
 		FA525CE32712863A0016FE7C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA525BAB271286360016FE7C /* SettingsViewController.swift */; };
 		FA525CF62712863A0016FE7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA525BB8271286360016FE7C /* LaunchScreen.storyboard */; };
 		FA525CF72712863A0016FE7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA525BB8271286360016FE7C /* LaunchScreen.storyboard */; };
+		FA525D51271326020016FE7C /* SyncedDeletable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA525D50271326020016FE7C /* SyncedDeletable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,6 +217,7 @@
 		FA525BAA271286360016FE7C /* SettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		FA525BAB271286360016FE7C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FA525BB8271286360016FE7C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA525D50271326020016FE7C /* SyncedDeletable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncedDeletable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,6 +463,7 @@
 				FA525AE3271277A70016FE7C /* QSCloudKitSynchronizer+MultiRealmResultsController.swift */,
 				FA525AE9271277A70016FE7C /* QSCloudKitSynchronizer+RealmSwift.swift */,
 				FA525AE4271277A70016FE7C /* RealmSwiftAdapter.swift */,
+				FA525D50271326020016FE7C /* SyncedDeletable.swift */,
 				FA525AEC271277A80016FE7C /* Record.swift */,
 				FA525AEA271277A70016FE7C /* ServerToken.swift */,
 				FA525AEB271277A70016FE7C /* SyncedEntity.swift */,
@@ -730,6 +733,7 @@
 				FA525AD02712778B0016FE7C /* TempFileManager.swift in Sources */,
 				FA525AD62712778B0016FE7C /* ModelAdapter.swift in Sources */,
 				FA525AE0271277920016FE7C /* FetchZoneChangesOperation.swift in Sources */,
+				FA525D51271326020016FE7C /* SyncedDeletable.swift in Sources */,
 				FA525AF4271277A80016FE7C /* ServerToken.swift in Sources */,
 				FA525AEE271277A80016FE7C /* RealmSwiftAdapter.swift in Sources */,
 				FA525ACC2712778A0016FE7C /* CloudKitSynchronizer+Subscriptions.swift in Sources */,

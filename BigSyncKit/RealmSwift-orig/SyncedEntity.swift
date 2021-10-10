@@ -10,17 +10,14 @@ import Foundation
 import RealmSwift
 
 class SyncedEntity: Object {
-    
     @objc dynamic var entityType: String = ""
     @objc dynamic var identifier: String = ""
     @objc dynamic var state: Int = 0
-    @objc dynamic var changedKeys: String?
     @objc dynamic var updated: Date?
     @objc dynamic var record: Record?
     @objc dynamic var share: SyncedEntity?
     
     convenience init(entityType: String, identifier: String, state: Int) {
-        
         self.init()
         
         self.entityType = entityType
@@ -29,7 +26,6 @@ class SyncedEntity: Object {
     }
     
     override static func primaryKey() -> String? {
-        
         return "identifier"
     }
     

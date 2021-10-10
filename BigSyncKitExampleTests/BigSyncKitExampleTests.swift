@@ -54,7 +54,6 @@ class BigSyncKitExampleTests: XCTestCase, RealmSwiftAdapterDelegate {
     func waitForHasChangesNotification(from adapter: RealmSwiftAdapter) {
         let myExpectation = expectation(description: "Has changes notification arrived")
         let observer = NotificationCenter.default.addObserver(forName: .ModelAdapterHasChangesNotification, object: adapter, queue: OperationQueue.main) { (notification) in
-            
             myExpectation.fulfill()
         }
         waitForExpectations(timeout: 1, handler: nil)
@@ -317,7 +316,7 @@ class BigSyncKitExampleTests: XCTestCase, RealmSwiftAdapterDelegate {
             waitForExpectations(timeout: 1, handler: nil)
             
             realm.beginWrite()
-            realm.delete(company)
+            company.setValue(true, forKey: "isDeleted")
             try! realm.commitWrite()
             
             waitForHasChangesNotification(from: adapter)
@@ -641,38 +640,10 @@ class BigSyncKitExampleTests: XCTestCase, RealmSwiftAdapterDelegate {
         }
     }
     
-    func testRecordsToUpload_changedObject_changesIncludeOnlyChangedProperties() {
-        let cases = TestCase.defaultCases
-        cases.forEach { tc in
-            let (realm, adapter, company, _) = defaultTestObjects(testCase: tc, name: "13", insertEmployee: false)
-            
-            let exp = expectation(description: "synced")
-            fullySync(adapter: adapter) { (_, _, _) in
-                exp.fulfill()
-            }
-            waitForExpectations(timeout: 1, handler: nil)
-            
-            realm.beginWrite()
-            company?.setValue("name 2", forKey: "name")
-            try! realm.commitWrite()
-            
-            waitForHasChangesNotification(from: adapter)
-            
-            adapter.prepareToImport()
-            let records = adapter.recordsToUpload(limit: 10)
-            adapter.didFinishImport(with: nil)
-            
-            XCTAssertTrue(records.count > 0);
-            let record = records.first!;
-            XCTAssertTrue(record["name"] as! String == "name 2")
-            XCTAssertNil(record["sortIndex"])
-        }
-    }
-    
     func testHasRecordID_missingObject_returnsNO() {
         let cases = TestCase.defaultCases
         cases.forEach { tc in
-            let (realm, adapter, _, _) = defaultTestObjects(testCase: tc, name: "14", insertEmployee: false)
+            let (_, adapter, _, _) = defaultTestObjects(testCase: tc, name: "14", insertEmployee: false)
             let exp = expectation(description: "synced")
             fullySync(adapter: adapter) { (uploaded, _, _) in
                 exp.fulfill()
@@ -686,7 +657,7 @@ class BigSyncKitExampleTests: XCTestCase, RealmSwiftAdapterDelegate {
     func testHasRecordID_existingObject_returnsYES() {
         let cases = TestCase.defaultCases
         cases.forEach { tc in
-            let (realm, adapter, _, _) = defaultTestObjects(testCase: tc, name: "15", insertEmployee: false)
+            let (_, adapter, _, _) = defaultTestObjects(testCase: tc, name: "15", insertEmployee: false)
             
             let exp = expectation(description: "synced")
             var objectRecord: CKRecord?
@@ -968,8 +939,8 @@ class BigSyncKitExampleTests: XCTestCase, RealmSwiftAdapterDelegate {
     func testRecordsToUpload_uniqueObjectsWithSameID_mapsObjectsToSameRecord() {
         let cases = TestCase.defaultCases
         cases.forEach { tc in
-            let (realm, adapter, company, _) = defaultTestObjects(testCase: tc, name: "25", insertCompany: true, insertEmployee: false)
-            let (realm2, adapter2, company2, _) = defaultTestObjects(testCase: tc, name: "25-2", insertCompany: true, insertEmployee: false)
+            let (_, adapter, _, _) = defaultTestObjects(testCase: tc, name: "25", insertCompany: true, insertEmployee: false)
+            let (_, adapter2, _, _) = defaultTestObjects(testCase: tc, name: "25-2", insertCompany: true, insertEmployee: false)
             
             adapter.prepareToImport()
             let records = adapter.recordsToUpload(limit: 10)
@@ -989,8 +960,8 @@ class BigSyncKitExampleTests: XCTestCase, RealmSwiftAdapterDelegate {
     func testSync_uniqueObjectsWithSameID_updatesObjectCorrectly() {
         let cases = TestCase.defaultCases
         cases.forEach { tc in
-            let (realm, adapter, company, _) = defaultTestObjects(testCase: tc, name: "26", insertCompany: true, insertEmployee: false)
-            let (realm2, adapter2, company2, _) = defaultTestObjects(testCase: tc, name: "26-2", insertCompany: true, insertEmployee: false)
+            let (realm, adapter, _, _) = defaultTestObjects(testCase: tc, name: "26", insertCompany: true, insertEmployee: false)
+            let (_, adapter2, company2, _) = defaultTestObjects(testCase: tc, name: "26-2", insertCompany: true, insertEmployee: false)
             
             let exp = expectation(description: "synced")
             
@@ -1029,8 +1000,7 @@ class BigSyncKitExampleTests: XCTestCase, RealmSwiftAdapterDelegate {
         }
     }
     
-    func testSync_clientMergePolicy_prioritizesLocalChanges() {
-        
+    /*func testSync_clientMergePolicy_prioritizesLocalChanges() {
         let cases = TestCase.defaultCases
         cases.forEach { tc in
             let (realm, adapter, company, _) = defaultTestObjects(testCase: tc, name: "28", insertCompany: true, insertEmployee: false)
@@ -1051,7 +1021,7 @@ class BigSyncKitExampleTests: XCTestCase, RealmSwiftAdapterDelegate {
             
             XCTAssertEqual(company2.value(forKey: "name") as? String, "company2")
         }
-    }
+    }*/
     
     func testSync_customMergePolicy_callsDelegateForResolution() {
         

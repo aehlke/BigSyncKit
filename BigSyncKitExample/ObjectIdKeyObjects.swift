@@ -9,10 +9,11 @@
 import RealmSwift
 import BigSyncKit
 
-class QSObjectIdKeyObject: Object, PrimaryKey {
-    
+class QSObjectIdKeyObject: Object, PrimaryKey, SyncedDeletable {
     @objc dynamic var name: String? = ""
     @objc dynamic var identifier: ObjectId = ObjectId.generate()
+    
+    @objc dynamic var isDeleted = false
     
     override class func primaryKey() -> String {
         
@@ -20,27 +21,30 @@ class QSObjectIdKeyObject: Object, PrimaryKey {
     }
 }
 
-class QSCompany_ObjId: Object, PrimaryKey {
-    
+class QSCompany_ObjId: Object, PrimaryKey, SyncedDeletable {
     @objc dynamic var name: String? = ""
     @objc dynamic var identifier: ObjectId = ObjectId.generate()
     let sortIndex = RealmOptional<Int>()
     
     let employees = LinkingObjects(fromType: QSEmployee_ObjId.self, property: "company")
     
+    @objc dynamic var isDeleted = false
+    
     override class func primaryKey() -> String {
         
         return "identifier"
     }
 }
 
-class QSEmployee_ObjId: Object, PrimaryKey, ParentKey {
+class QSEmployee_ObjId: Object, PrimaryKey, ParentKey, SyncedDeletable {
     @objc dynamic var name: String? = ""
     let sortIndex = RealmOptional<Int>()
     @objc dynamic var identifier: ObjectId = ObjectId.generate()
     @objc dynamic var photo: Data? = nil
     
     @objc dynamic var company: QSCompany_ObjId?
+    
+    @objc dynamic var isDeleted = false
     
     override class func primaryKey() -> String {
         return "identifier"

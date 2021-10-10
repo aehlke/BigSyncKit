@@ -9,13 +9,14 @@
 import RealmSwift
 import BigSyncKit
 
-class QSCompany_Int: Object, PrimaryKey {
-    
+class QSCompany_Int: Object, PrimaryKey, SyncedDeletable {
     @objc dynamic var name: String? = ""
     @objc dynamic var identifier: Int = 0
     let sortIndex = RealmOptional<Int>()
     
     let employees = LinkingObjects(fromType: QSEmployee_Int.self, property: "company")
+
+    @objc dynamic var isDeleted = false
     
     override class func primaryKey() -> String {
         
@@ -23,13 +24,15 @@ class QSCompany_Int: Object, PrimaryKey {
     }
 }
 
-class QSEmployee_Int: Object, PrimaryKey, ParentKey {
+class QSEmployee_Int: Object, PrimaryKey, ParentKey, SyncedDeletable {
     @objc dynamic var name: String? = ""
     let sortIndex = RealmOptional<Int>()
     @objc dynamic var identifier: Int = 0
     @objc dynamic var photo: Data? = nil
     
     @objc dynamic var company: QSCompany_Int?
+    
+    @objc dynamic var isDeleted = false
     
     override class func primaryKey() -> String {
         return "identifier"

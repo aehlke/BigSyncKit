@@ -3,13 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E6CCEF7F57574F981AEAFCE /* Pods_BigSyncKitExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7730E097ADD24BD71E93C06E /* Pods_BigSyncKitExampleTests.framework */; };
-		E7DD946E1F2D2939E938D7DB /* Pods_BigSyncKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A36C4744D5BB8FD9A8C9377 /* Pods_BigSyncKitExample.framework */; };
-		EBC29E888EA8254E8A789F16 /* Pods_BigSyncKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE97660DCA62080E2488A0D /* Pods_BigSyncKit.framework */; };
 		FA5259732711E3BC0016FE7C /* BigSyncKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FA5259652711E3BC0016FE7C /* BigSyncKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA5259EB27120CAC0016FE7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5259EA27120CAC0016FE7C /* AppDelegate.swift */; };
 		FA5259ED27120CAC0016FE7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5259EC27120CAC0016FE7C /* SceneDelegate.swift */; };
@@ -120,15 +117,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0A36C4744D5BB8FD9A8C9377 /* Pods_BigSyncKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BigSyncKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1039CFCBB03919A0976A2B25 /* Pods-BigSyncKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BigSyncKitExample.debug.xcconfig"; path = "Target Support Files/Pods-BigSyncKitExample/Pods-BigSyncKitExample.debug.xcconfig"; sourceTree = "<group>"; };
-		10AC0678FACBD179634375F5 /* Pods-BigSyncKitExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BigSyncKitExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-BigSyncKitExampleTests/Pods-BigSyncKitExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
-		24F98B03AC6DE2901757A4C2 /* Pods-BigSyncKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BigSyncKit.debug.xcconfig"; path = "Target Support Files/Pods-BigSyncKit/Pods-BigSyncKit.debug.xcconfig"; sourceTree = "<group>"; };
-		36D9954A22D65775A69CDE1F /* Pods-BigSyncKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BigSyncKit.release.xcconfig"; path = "Target Support Files/Pods-BigSyncKit/Pods-BigSyncKit.release.xcconfig"; sourceTree = "<group>"; };
-		575D1CCE5309345F2811DB17 /* Pods-BigSyncKitExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BigSyncKitExampleTests.release.xcconfig"; path = "Target Support Files/Pods-BigSyncKitExampleTests/Pods-BigSyncKitExampleTests.release.xcconfig"; sourceTree = "<group>"; };
-		7730E097ADD24BD71E93C06E /* Pods_BigSyncKitExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BigSyncKitExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CE97660DCA62080E2488A0D /* Pods_BigSyncKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BigSyncKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD8FA690EEF37E432FD2DB27 /* Pods-BigSyncKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BigSyncKitExample.release.xcconfig"; path = "Target Support Files/Pods-BigSyncKitExample/Pods-BigSyncKitExample.release.xcconfig"; sourceTree = "<group>"; };
 		FA5259622711E3BC0016FE7C /* BigSyncKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BigSyncKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5259652711E3BC0016FE7C /* BigSyncKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BigSyncKit.h; sourceTree = "<group>"; };
 		FA5259662711E3BC0016FE7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -180,33 +168,33 @@
 		FA525AB62712775C0016FE7C /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Company.swift; path = BigSyncKitExample/Common/Model/Company.swift; sourceTree = SOURCE_ROOT; };
 		FA525AB72712775C0016FE7C /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Employee.swift; path = BigSyncKitExample/Common/Model/Employee.swift; sourceTree = SOURCE_ROOT; };
 		FA525AB82712775C0016FE7C /* Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Identifier.swift; path = BigSyncKitExample/Common/Model/Identifier.swift; sourceTree = SOURCE_ROOT; };
-		FA525ABE2712778A0016FE7C /* CloudKitSynchronizer+Subscriptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CloudKitSynchronizer+Subscriptions.swift"; path = "BigSyncKit/QSSynchronizer-orig/CloudKitSynchronizer+Subscriptions.swift"; sourceTree = SOURCE_ROOT; };
-		FA525AC02712778A0016FE7C /* CloudKitSynchronizer+Private.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CloudKitSynchronizer+Private.swift"; path = "BigSyncKit/QSSynchronizer-orig/CloudKitSynchronizer+Private.swift"; sourceTree = SOURCE_ROOT; };
-		FA525AC12712778A0016FE7C /* KeyValueStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyValueStore.swift; path = "BigSyncKit/QSSynchronizer-orig/KeyValueStore.swift"; sourceTree = SOURCE_ROOT; };
-		FA525AC22712778A0016FE7C /* TempFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TempFileManager.swift; path = "BigSyncKit/QSSynchronizer-orig/TempFileManager.swift"; sourceTree = SOURCE_ROOT; };
-		FA525AC32712778A0016FE7C /* BackupDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackupDetection.swift; path = "BigSyncKit/QSSynchronizer-orig/BackupDetection.swift"; sourceTree = SOURCE_ROOT; };
-		FA525AC42712778A0016FE7C /* QSCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QSCoder.swift; path = "BigSyncKit/QSSynchronizer-orig/QSCoder.swift"; sourceTree = SOURCE_ROOT; };
-		FA525AC52712778A0016FE7C /* CloudKitDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudKitDatabase.swift; path = "BigSyncKit/QSSynchronizer-orig/CloudKitDatabase.swift"; sourceTree = SOURCE_ROOT; };
-		FA525AC62712778A0016FE7C /* CloudKitSynchronizer+Sharing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CloudKitSynchronizer+Sharing.swift"; path = "BigSyncKit/QSSynchronizer-orig/CloudKitSynchronizer+Sharing.swift"; sourceTree = SOURCE_ROOT; };
-		FA525AC72712778A0016FE7C /* SyncedEntityState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SyncedEntityState.swift; path = "BigSyncKit/QSSynchronizer-orig/SyncedEntityState.swift"; sourceTree = SOURCE_ROOT; };
-		FA525AC82712778A0016FE7C /* ModelAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelAdapter.swift; path = "BigSyncKit/QSSynchronizer-orig/ModelAdapter.swift"; sourceTree = SOURCE_ROOT; };
-		FA525AC92712778A0016FE7C /* CloudKitSynchronizer+Sync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CloudKitSynchronizer+Sync.swift"; path = "BigSyncKit/QSSynchronizer-orig/CloudKitSynchronizer+Sync.swift"; sourceTree = SOURCE_ROOT; };
-		FA525ACA2712778A0016FE7C /* PrimaryKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrimaryKey.swift; path = "BigSyncKit/QSSynchronizer-orig/PrimaryKey.swift"; sourceTree = SOURCE_ROOT; };
-		FA525ACB2712778A0016FE7C /* CloudKitSynchronizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudKitSynchronizer.swift; path = "BigSyncKit/QSSynchronizer-orig/CloudKitSynchronizer.swift"; sourceTree = SOURCE_ROOT; };
-		FA525ADA271277920016FE7C /* ModifyRecordsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModifyRecordsOperation.swift; path = "BigSyncKit/QSSynchronizer-orig/Operations/ModifyRecordsOperation.swift"; sourceTree = SOURCE_ROOT; };
-		FA525ADB271277920016FE7C /* CloudKitSynchronizerOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudKitSynchronizerOperation.swift; path = "BigSyncKit/QSSynchronizer-orig/Operations/CloudKitSynchronizerOperation.swift"; sourceTree = SOURCE_ROOT; };
-		FA525ADC271277920016FE7C /* FetchZoneChangesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchZoneChangesOperation.swift; path = "BigSyncKit/QSSynchronizer-orig/Operations/FetchZoneChangesOperation.swift"; sourceTree = SOURCE_ROOT; };
-		FA525ADD271277920016FE7C /* FetchDatabaseChangesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchDatabaseChangesOperation.swift; path = "BigSyncKit/QSSynchronizer-orig/Operations/FetchDatabaseChangesOperation.swift"; sourceTree = SOURCE_ROOT; };
-		FA525AE3271277A70016FE7C /* QSCloudKitSynchronizer+MultiRealmResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "QSCloudKitSynchronizer+MultiRealmResultsController.swift"; path = "BigSyncKit/RealmSwift-orig/QSCloudKitSynchronizer+MultiRealmResultsController.swift"; sourceTree = SOURCE_ROOT; };
-		FA525AE4271277A70016FE7C /* RealmSwiftAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmSwiftAdapter.swift; path = "BigSyncKit/RealmSwift-orig/RealmSwiftAdapter.swift"; sourceTree = SOURCE_ROOT; };
-		FA525AE5271277A70016FE7C /* MultiRealmResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultiRealmResultsController.swift; path = "BigSyncKit/RealmSwift-orig/MultiRealmResultsController.swift"; sourceTree = SOURCE_ROOT; };
-		FA525AE6271277A70016FE7C /* DefaultRealmSwiftAdapterProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultRealmSwiftAdapterProvider.swift; path = "BigSyncKit/RealmSwift-orig/DefaultRealmSwiftAdapterProvider.swift"; sourceTree = SOURCE_ROOT; };
-		FA525AE7271277A70016FE7C /* DefaultRealmProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultRealmProvider.swift; path = "BigSyncKit/RealmSwift-orig/DefaultRealmProvider.swift"; sourceTree = SOURCE_ROOT; };
-		FA525AE8271277A70016FE7C /* PendingRelationship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PendingRelationship.swift; path = "BigSyncKit/RealmSwift-orig/PendingRelationship.swift"; sourceTree = SOURCE_ROOT; };
-		FA525AE9271277A70016FE7C /* QSCloudKitSynchronizer+RealmSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "QSCloudKitSynchronizer+RealmSwift.swift"; path = "BigSyncKit/RealmSwift-orig/QSCloudKitSynchronizer+RealmSwift.swift"; sourceTree = SOURCE_ROOT; };
-		FA525AEA271277A70016FE7C /* ServerToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerToken.swift; path = "BigSyncKit/RealmSwift-orig/ServerToken.swift"; sourceTree = SOURCE_ROOT; };
-		FA525AEB271277A70016FE7C /* SyncedEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SyncedEntity.swift; path = "BigSyncKit/RealmSwift-orig/SyncedEntity.swift"; sourceTree = SOURCE_ROOT; };
-		FA525AEC271277A80016FE7C /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Record.swift; path = "BigSyncKit/RealmSwift-orig/Record.swift"; sourceTree = SOURCE_ROOT; };
+		FA525ABE2712778A0016FE7C /* CloudKitSynchronizer+Subscriptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CloudKitSynchronizer+Subscriptions.swift"; path = "BigSyncKit/QSSynchronizer/CloudKitSynchronizer+Subscriptions.swift"; sourceTree = SOURCE_ROOT; };
+		FA525AC02712778A0016FE7C /* CloudKitSynchronizer+Private.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CloudKitSynchronizer+Private.swift"; path = "BigSyncKit/QSSynchronizer/CloudKitSynchronizer+Private.swift"; sourceTree = SOURCE_ROOT; };
+		FA525AC12712778A0016FE7C /* KeyValueStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyValueStore.swift; path = BigSyncKit/QSSynchronizer/KeyValueStore.swift; sourceTree = SOURCE_ROOT; };
+		FA525AC22712778A0016FE7C /* TempFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TempFileManager.swift; path = BigSyncKit/QSSynchronizer/TempFileManager.swift; sourceTree = SOURCE_ROOT; };
+		FA525AC32712778A0016FE7C /* BackupDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackupDetection.swift; path = BigSyncKit/QSSynchronizer/BackupDetection.swift; sourceTree = SOURCE_ROOT; };
+		FA525AC42712778A0016FE7C /* QSCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QSCoder.swift; path = BigSyncKit/QSSynchronizer/QSCoder.swift; sourceTree = SOURCE_ROOT; };
+		FA525AC52712778A0016FE7C /* CloudKitDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudKitDatabase.swift; path = BigSyncKit/QSSynchronizer/CloudKitDatabase.swift; sourceTree = SOURCE_ROOT; };
+		FA525AC62712778A0016FE7C /* CloudKitSynchronizer+Sharing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CloudKitSynchronizer+Sharing.swift"; path = "BigSyncKit/QSSynchronizer/CloudKitSynchronizer+Sharing.swift"; sourceTree = SOURCE_ROOT; };
+		FA525AC72712778A0016FE7C /* SyncedEntityState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SyncedEntityState.swift; path = BigSyncKit/QSSynchronizer/SyncedEntityState.swift; sourceTree = SOURCE_ROOT; };
+		FA525AC82712778A0016FE7C /* ModelAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelAdapter.swift; path = BigSyncKit/QSSynchronizer/ModelAdapter.swift; sourceTree = SOURCE_ROOT; };
+		FA525AC92712778A0016FE7C /* CloudKitSynchronizer+Sync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CloudKitSynchronizer+Sync.swift"; path = "BigSyncKit/QSSynchronizer/CloudKitSynchronizer+Sync.swift"; sourceTree = SOURCE_ROOT; };
+		FA525ACA2712778A0016FE7C /* PrimaryKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrimaryKey.swift; path = BigSyncKit/QSSynchronizer/PrimaryKey.swift; sourceTree = SOURCE_ROOT; };
+		FA525ACB2712778A0016FE7C /* CloudKitSynchronizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudKitSynchronizer.swift; path = BigSyncKit/QSSynchronizer/CloudKitSynchronizer.swift; sourceTree = SOURCE_ROOT; };
+		FA525ADA271277920016FE7C /* ModifyRecordsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModifyRecordsOperation.swift; path = BigSyncKit/QSSynchronizer/Operations/ModifyRecordsOperation.swift; sourceTree = SOURCE_ROOT; };
+		FA525ADB271277920016FE7C /* CloudKitSynchronizerOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudKitSynchronizerOperation.swift; path = BigSyncKit/QSSynchronizer/Operations/CloudKitSynchronizerOperation.swift; sourceTree = SOURCE_ROOT; };
+		FA525ADC271277920016FE7C /* FetchZoneChangesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchZoneChangesOperation.swift; path = BigSyncKit/QSSynchronizer/Operations/FetchZoneChangesOperation.swift; sourceTree = SOURCE_ROOT; };
+		FA525ADD271277920016FE7C /* FetchDatabaseChangesOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchDatabaseChangesOperation.swift; path = BigSyncKit/QSSynchronizer/Operations/FetchDatabaseChangesOperation.swift; sourceTree = SOURCE_ROOT; };
+		FA525AE3271277A70016FE7C /* QSCloudKitSynchronizer+MultiRealmResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "QSCloudKitSynchronizer+MultiRealmResultsController.swift"; path = "BigSyncKit/RealmSwift/QSCloudKitSynchronizer+MultiRealmResultsController.swift"; sourceTree = SOURCE_ROOT; };
+		FA525AE4271277A70016FE7C /* RealmSwiftAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmSwiftAdapter.swift; path = BigSyncKit/RealmSwift/RealmSwiftAdapter.swift; sourceTree = SOURCE_ROOT; };
+		FA525AE5271277A70016FE7C /* MultiRealmResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultiRealmResultsController.swift; path = BigSyncKit/RealmSwift/MultiRealmResultsController.swift; sourceTree = SOURCE_ROOT; };
+		FA525AE6271277A70016FE7C /* DefaultRealmSwiftAdapterProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultRealmSwiftAdapterProvider.swift; path = BigSyncKit/RealmSwift/DefaultRealmSwiftAdapterProvider.swift; sourceTree = SOURCE_ROOT; };
+		FA525AE7271277A70016FE7C /* DefaultRealmProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultRealmProvider.swift; path = BigSyncKit/RealmSwift/DefaultRealmProvider.swift; sourceTree = SOURCE_ROOT; };
+		FA525AE8271277A70016FE7C /* PendingRelationship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PendingRelationship.swift; path = BigSyncKit/RealmSwift/PendingRelationship.swift; sourceTree = SOURCE_ROOT; };
+		FA525AE9271277A70016FE7C /* QSCloudKitSynchronizer+RealmSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "QSCloudKitSynchronizer+RealmSwift.swift"; path = "BigSyncKit/RealmSwift/QSCloudKitSynchronizer+RealmSwift.swift"; sourceTree = SOURCE_ROOT; };
+		FA525AEA271277A70016FE7C /* ServerToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerToken.swift; path = BigSyncKit/RealmSwift/ServerToken.swift; sourceTree = SOURCE_ROOT; };
+		FA525AEB271277A70016FE7C /* SyncedEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SyncedEntity.swift; path = BigSyncKit/RealmSwift/SyncedEntity.swift; sourceTree = SOURCE_ROOT; };
+		FA525AEC271277A80016FE7C /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Record.swift; path = BigSyncKit/RealmSwift/Record.swift; sourceTree = SOURCE_ROOT; };
 		FA525AF7271278A40016FE7C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		FA525AF9271278DE0016FE7C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
 		FA525AFB27127BF20016FE7C /* RecordProcessingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordProcessingDelegate.swift; sourceTree = "<group>"; };
@@ -223,7 +211,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBC29E888EA8254E8A789F16 /* Pods_BigSyncKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +220,6 @@
 			files = (
 				FA525A4B27120D6F0016FE7C /* CloudKit.framework in Frameworks */,
 				FA525A7B2712306A0016FE7C /* BigSyncKit.framework in Frameworks */,
-				E7DD946E1F2D2939E938D7DB /* Pods_BigSyncKitExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,26 +227,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E6CCEF7F57574F981AEAFCE /* Pods_BigSyncKitExampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		52D17DABC772DFF7B85FD7BB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				24F98B03AC6DE2901757A4C2 /* Pods-BigSyncKit.debug.xcconfig */,
-				36D9954A22D65775A69CDE1F /* Pods-BigSyncKit.release.xcconfig */,
-				1039CFCBB03919A0976A2B25 /* Pods-BigSyncKitExample.debug.xcconfig */,
-				DD8FA690EEF37E432FD2DB27 /* Pods-BigSyncKitExample.release.xcconfig */,
-				10AC0678FACBD179634375F5 /* Pods-BigSyncKitExampleTests.debug.xcconfig */,
-				575D1CCE5309345F2811DB17 /* Pods-BigSyncKitExampleTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		FA5259582711E3BC0016FE7C = {
 			isa = PBXGroup;
 			children = (
@@ -269,7 +241,6 @@
 				FA525A0027120CAD0016FE7C /* BigSyncKitExampleTests */,
 				FA5259632711E3BC0016FE7C /* Products */,
 				FA525A4927120D6F0016FE7C /* Frameworks */,
-				52D17DABC772DFF7B85FD7BB /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -358,9 +329,6 @@
 				FA525A5B271218720016FE7C /* Realm.framework */,
 				FA525A5A271218720016FE7C /* RealmSwift.framework */,
 				FA525A4A27120D6F0016FE7C /* CloudKit.framework */,
-				8CE97660DCA62080E2488A0D /* Pods_BigSyncKit.framework */,
-				0A36C4744D5BB8FD9A8C9377 /* Pods_BigSyncKitExample.framework */,
-				7730E097ADD24BD71E93C06E /* Pods_BigSyncKitExampleTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -497,7 +465,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA5259762711E3BC0016FE7C /* Build configuration list for PBXNativeTarget "BigSyncKit" */;
 			buildPhases = (
-				73562CD39F82D40A215B4854 /* [CP] Check Pods Manifest.lock */,
 				FA52595D2711E3BC0016FE7C /* Headers */,
 				FA52595E2711E3BC0016FE7C /* Sources */,
 				FA52595F2711E3BC0016FE7C /* Frameworks */,
@@ -516,12 +483,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA525A0F27120CAD0016FE7C /* Build configuration list for PBXNativeTarget "BigSyncKitExample" */;
 			buildPhases = (
-				5C9B38F3A27B94739DB74DF4 /* [CP] Check Pods Manifest.lock */,
 				FA5259E427120CAC0016FE7C /* Sources */,
 				FA5259E527120CAC0016FE7C /* Frameworks */,
 				FA5259E627120CAC0016FE7C /* Resources */,
 				FA525A732712301D0016FE7C /* Embed Frameworks */,
-				45CAE70E48B55031AA057606 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -537,7 +502,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA525A1227120CAD0016FE7C /* Build configuration list for PBXNativeTarget "BigSyncKitExampleTests" */;
 			buildPhases = (
-				683B6CCD7C7BEE542B6D5DCB /* [CP] Check Pods Manifest.lock */,
 				FA5259F927120CAD0016FE7C /* Sources */,
 				FA5259FA27120CAD0016FE7C /* Frameworks */,
 				FA5259FB27120CAD0016FE7C /* Resources */,
@@ -623,92 +587,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		45CAE70E48B55031AA057606 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BigSyncKitExample/Pods-BigSyncKitExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BigSyncKitExample/Pods-BigSyncKitExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BigSyncKitExample/Pods-BigSyncKitExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5C9B38F3A27B94739DB74DF4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BigSyncKitExample-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		683B6CCD7C7BEE542B6D5DCB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BigSyncKitExampleTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		73562CD39F82D40A215B4854 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BigSyncKit-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FA52595E2711E3BC0016FE7C /* Sources */ = {
@@ -954,7 +832,6 @@
 		};
 		FA5259772711E3BC0016FE7C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24F98B03AC6DE2901757A4C2 /* Pods-BigSyncKit.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -993,7 +870,6 @@
 		};
 		FA5259782711E3BC0016FE7C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36D9954A22D65775A69CDE1F /* Pods-BigSyncKit.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -1031,7 +907,6 @@
 		};
 		FA525A1027120CAD0016FE7C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1039CFCBB03919A0976A2B25 /* Pods-BigSyncKitExample.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1067,7 +942,6 @@
 		};
 		FA525A1127120CAD0016FE7C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD8FA690EEF37E432FD2DB27 /* Pods-BigSyncKitExample.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1103,7 +977,6 @@
 		};
 		FA525A1327120CAD0016FE7C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10AC0678FACBD179634375F5 /* Pods-BigSyncKitExampleTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1134,7 +1007,6 @@
 		};
 		FA525A1427120CAD0016FE7C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 575D1CCE5309345F2811DB17 /* Pods-BigSyncKitExampleTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";

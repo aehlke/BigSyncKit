@@ -22,7 +22,6 @@ public extension NSNotification {
 }
 
 public class DefaultRealmProvider: NSObject, AdapterProvider {
-    
     let identifier: String
     private(set) var adapterDictionary: [CKRecordZone.ID: RealmSwiftAdapter]
     private(set) var realms: [CKRecordZone.ID: Realm.Configuration]
@@ -43,7 +42,6 @@ public class DefaultRealmProvider: NSObject, AdapterProvider {
     }
     
     private class func applicationDocumentsDirectory() -> String {
-        
         #if os(iOS)
         return NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true).last!
         #else
@@ -53,7 +51,6 @@ public class DefaultRealmProvider: NSObject, AdapterProvider {
     }
     
     private class func applicationDocumentsDirectoryForAppGroup(_ suiteName: String?) -> String {
-        
         if let suiteName = suiteName {
             return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: suiteName)!.path
         } else {
@@ -72,7 +69,6 @@ public class DefaultRealmProvider: NSObject, AdapterProvider {
     }
     
     private func bringUpDataStacks() {
-        
         let folderURL = URL(fileURLWithPath: stackProviderStoresPath(appGroup: appGroup))
         if let enumerator = FileManager.default.enumerator(at: folderURL, includingPropertiesForKeys: [URLResourceKey.nameKey, URLResourceKey.isDirectoryKey], options: [.skipsSubdirectoryDescendants]) {
             
@@ -90,7 +86,6 @@ public class DefaultRealmProvider: NSObject, AdapterProvider {
     }
     
     private func realmSwiftAdapterFor(targetRealmURL: URL, persistenceRealmURL: URL, zoneID: CKRecordZone.ID) -> RealmSwiftAdapter {
-        
         let targetConfiguration = Realm.Configuration(fileURL: targetRealmURL,
                                                       inMemoryIdentifier: self.realmConfiguration.inMemoryIdentifier,
                                                       syncConfiguration: self.realmConfiguration.syncConfiguration,
@@ -117,7 +112,6 @@ public class DefaultRealmProvider: NSObject, AdapterProvider {
     }
     
     public func cloudKitSynchronizer(_ synchronizer: CloudKitSynchronizer, modelAdapterForRecordZoneID recordZoneID: CKRecordZone.ID) -> ModelAdapter? {
-        
         if let adapter = adapterDictionary[recordZoneID] {
             return adapter
         }
@@ -141,7 +135,6 @@ public class DefaultRealmProvider: NSObject, AdapterProvider {
     }
     
     public func cloudKitSynchronizer(_ synchronizer: CloudKitSynchronizer, zoneWasDeletedWithZoneID recordZoneID: CKRecordZone.ID) {
-        
         guard let adapter = adapterDictionary[recordZoneID],
             adapter.serverChangeToken != nil else {
                 return

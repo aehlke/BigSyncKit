@@ -10,7 +10,6 @@ import CloudKit
 import RealmSwift
 
 public class DefaultRealmSwiftAdapterProvider: NSObject, AdapterProvider {
-    
     let zoneID: CKRecordZone.ID
     let persistenceConfiguration: Realm.Configuration
     let targetConfiguration: Realm.Configuration
@@ -27,14 +26,12 @@ public class DefaultRealmSwiftAdapterProvider: NSObject, AdapterProvider {
     }
     
     public func cloudKitSynchronizer(_ synchronizer: CloudKitSynchronizer, modelAdapterForRecordZoneID recordZoneID: CKRecordZone.ID) -> ModelAdapter? {
-        
         guard recordZoneID == zoneID else { return nil }
         
         return adapter
     }
     
     public func cloudKitSynchronizer(_ synchronizer: CloudKitSynchronizer, zoneWasDeletedWithZoneID recordZoneID: CKRecordZone.ID) {
-        
         let adapterHasSyncedBefore = adapter.serverChangeToken != nil
         if recordZoneID == zoneID && adapterHasSyncedBefore {
             
@@ -47,7 +44,6 @@ public class DefaultRealmSwiftAdapterProvider: NSObject, AdapterProvider {
     }
     
     fileprivate func createAdapter() -> RealmSwiftAdapter {
-        
         return RealmSwiftAdapter(persistenceRealmConfiguration: persistenceConfiguration, targetRealmConfiguration: targetConfiguration, recordZoneID: zoneID)
     }
     

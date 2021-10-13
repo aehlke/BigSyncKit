@@ -17,7 +17,6 @@ public extension Notification.Name {
 }
 
 class SettingsManager {
-    
     private let syncEnabledKey = "SyncKitExample.syncEnabledKey"
     weak var delegate: SettingsManagerDelegate?
     

@@ -73,7 +73,6 @@ public extension Notification.Name {
  `CloudKitSynchronizer` will post notifications at different steps of the synchronization process.
  */
 public class CloudKitSynchronizer: NSObject {
-    
     /// SyncError
     @objc public enum SyncError: Int, Error {
         /**
@@ -95,7 +94,6 @@ public class CloudKitSynchronizer: NSObject {
         case cancelled = 3
     }
     
-    
     /// `CloudKitSynchronizer` can be configured to only download changes, never uploading local changes to CloudKit.
     @objc public enum SynchronizeMode: Int {
         /// Download and upload all changes
@@ -107,7 +105,6 @@ public class CloudKitSynchronizer: NSObject {
     public static let errorDomain = "CloudKitSynchronizerErrorDomain"
     public static let errorKey = "CloudKitSynchronizerErrorKey"
     
-    
     /**
      More than one `CloudKitSynchronizer` may be created in an app.
      The identifier is used to persist some state, so it should always be the same for a synchronizer –if you change your app to use a different identifier state might be lost.
@@ -115,7 +112,7 @@ public class CloudKitSynchronizer: NSObject {
     @objc public let identifier: String
     
     /// iCloud container identifier.
-    @objc public let containerIdentifier: String
+    @objc public let containerIdentifier: String?
     
     /// Adapter wrapping a `CKDatabase`. The synchronizer will run CloudKit operations on the given database.
     public let database: CloudKitDatabaseAdapter
@@ -154,7 +151,6 @@ public class CloudKitSynchronizer: NSObject {
     internal var uploadRetries = 0
     internal var didNotifyUpload = Set<CKRecordZone.ID>()
     
-    
     /// Default number of records to send in an upload operation.
     @objc public static var defaultBatchSize = 200
     static let deviceUUIDKey = "QSCloudKitDeviceUUIDKey"
@@ -168,7 +164,7 @@ public class CloudKitSynchronizer: NSObject {
     ///   - adapterProvider: `CloudKitSynchronizerAdapterProvider`
     ///   - keyValueStore: Object conforming to KeyValueStore (`UserDefaultsAdapter`, for example)
     /// - Returns: Initialized synchronizer or `nil` if no iCloud container can be found with the provided identifier.
-    @objc public init(identifier: String, containerIdentifier: String, database: CloudKitDatabaseAdapter, adapterProvider: AdapterProvider, keyValueStore: KeyValueStore = UserDefaultsAdapter(userDefaults: UserDefaults.standard)) {
+    @objc public init(identifier: String, containerIdentifier: String? = nil, database: CloudKitDatabaseAdapter, adapterProvider: AdapterProvider, keyValueStore: KeyValueStore = UserDefaultsAdapter(userDefaults: UserDefaults.standard)) {
         self.identifier = identifier
         self.containerIdentifier = containerIdentifier
         self.adapterProvider = adapterProvider
@@ -181,7 +177,6 @@ public class CloudKitSynchronizer: NSObject {
                 self.clearDeviceIdentifier()
             }
         }
-        
     }
     
     fileprivate var _deviceIdentifier: String!
@@ -241,7 +236,6 @@ public class CloudKitSynchronizer: NSObject {
     * The synchronizer should not be used after calling this function, create a new synchronizer instead if you need it.
     */
     @objc public func eraseLocalMetadata() {
-
         cancelSynchronization()
         dispatchQueue.async {
             self.storedDatabaseToken = nil

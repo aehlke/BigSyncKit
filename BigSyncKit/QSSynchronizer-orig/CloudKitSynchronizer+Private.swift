@@ -112,7 +112,8 @@ extension CloudKitSynchronizer {
     }
     
     fileprivate func userDefaultsKey(for key: String) -> String {
-        return "\(containerIdentifier)-\(identifier)-\(key)"
+        let prefix = containerIdentifier ?? CKContainer.default().containerIdentifier ?? ""
+        return "\(prefix)-\(identifier)-\(key)"
     }
     
     fileprivate func storeKey(for zoneID: CKRecordZone.ID) -> String {

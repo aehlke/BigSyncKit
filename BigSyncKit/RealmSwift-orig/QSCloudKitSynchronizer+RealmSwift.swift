@@ -11,7 +11,6 @@ import RealmSwift
 import CloudKit
 
 extension CloudKitSynchronizer {
-    
     /**
      *  Creates a new `QSCloudKitSynchronizer` prepared to work with a Realm model and the SyncKit default record zone in the private database.
      - Parameters:
@@ -34,6 +33,7 @@ extension CloudKitSynchronizer {
                                                 keyValueStore: userDefaultsAdapter)
         synchronizer.addModelAdapter(provider.adapter)
         transferOldServerChangeToken(to: provider.adapter, userDefaults: userDefaultsAdapter, containerName: containerName)
+        
         return synchronizer
     }
     
@@ -47,7 +47,6 @@ extension CloudKitSynchronizer {
      -Returns: A new CloudKit synchronizer for the given realm.
      */
     public class func sharedSynchronizer(containerName: String, configuration: Realm.Configuration, suiteName: String? = nil) -> CloudKitSynchronizer {
-        
         let userDefaults = UserDefaults(suiteName: suiteName)!
         let userDefaultsAdapter = UserDefaultsAdapter(userDefaults: userDefaults)
         let container = CKContainer(identifier: containerName)
@@ -59,18 +58,16 @@ extension CloudKitSynchronizer {
                                                 database: DefaultCloudKitDatabaseAdapter(database: container.sharedCloudDatabase),
                                                 adapterProvider: provider,
                                                 keyValueStore: userDefaultsAdapter)
-        
         for adapter in provider.adapterDictionary.values {
             synchronizer.addModelAdapter(adapter)
         }
+        
         return synchronizer
     }
     
     fileprivate class func transferOldServerChangeToken(to adapter: ModelAdapter, userDefaults: KeyValueStore, containerName: String) {
-        
         let key = containerName.appending("QSCloudKitFetchChangesServerTokenKey")
         if let encodedToken = userDefaults.object(forKey: key) as? Data {
-            
             if let token = NSKeyedUnarchiver.unarchiveObject(with: encodedToken) as? CKServerChangeToken {
                 adapter.saveToken(token)
             }

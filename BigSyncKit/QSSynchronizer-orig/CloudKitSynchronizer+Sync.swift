@@ -9,7 +9,6 @@ import Foundation
 import CloudKit
 
 extension CloudKitSynchronizer {
-    
     func performSynchronization() {
         dispatchQueue.async {
             self.postNotification(.SynchronizerWillSynchronize)
@@ -57,7 +56,6 @@ extension CloudKitSynchronizer {
 // MARK: - Utilities
 
 extension CloudKitSynchronizer {
-    
     func postNotification(_ notification: Notification.Name, object: Any? = self, userInfo: [AnyHashable: Any]? = nil) {
         DispatchQueue.main.async {
             NotificationCenter.default.post(name: notification, object: object, userInfo: userInfo)
@@ -178,7 +176,6 @@ extension CloudKitSynchronizer {
 //MARK: - Fetch changes
 
 extension CloudKitSynchronizer {
-    
     func fetchChanges() {
         guard cancelSync == false else {
             finishSynchronization(error: SyncError.cancelled)
@@ -335,7 +332,7 @@ extension CloudKitSynchronizer {
         }
     }
     
-    func uploadChanges(completion: @escaping (Error?)->()) {
+    func uploadChanges(completion: @escaping (Error?) -> ()) {
         sequential(objects: modelAdapters, closure: setupZoneAndUploadRecords) { (error) in
             guard error == nil else { completion(error); return }
             
@@ -343,7 +340,7 @@ extension CloudKitSynchronizer {
         }
     }
     
-    func setupZoneAndUploadRecords(adapter: ModelAdapter, completion: @escaping (Error?)->()) {
+    func setupZoneAndUploadRecords(adapter: ModelAdapter, completion: @escaping (Error?) -> ()) {
         setupRecordZoneIfNeeded(adapter: adapter) { (error) in
             guard error == nil else {
                 completion(error)
@@ -356,7 +353,7 @@ extension CloudKitSynchronizer {
         }
     }
     
-    func setupRecordZoneIfNeeded(adapter: ModelAdapter, completion: @escaping (Error?)->()) {
+    func setupRecordZoneIfNeeded(adapter: ModelAdapter, completion: @escaping (Error?) -> ()) {
         guard needsZoneSetup(adapter: adapter) else {
             completion(nil)
             return
@@ -365,7 +362,7 @@ extension CloudKitSynchronizer {
         setupRecordZoneID(adapter.recordZoneID, completion: completion)
     }
     
-    func setupRecordZoneID(_ zoneID: CKRecordZone.ID, completion: @escaping (Error?)->()) {
+    func setupRecordZoneID(_ zoneID: CKRecordZone.ID, completion: @escaping (Error?) -> ()) {
         database.fetch(withRecordZoneID: zoneID) { (zone, error) in
             if self.isZoneNotFoundOrDeletedError(error) {
                 let newZone = CKRecordZone(zoneID: zoneID)

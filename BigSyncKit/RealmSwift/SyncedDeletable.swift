@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import RealmSwift
 
-public protocol SyncedDeletable {
+public protocol SyncedDeletable: RealmSwift.Object {
     var isDeleted: Bool { get }
 }

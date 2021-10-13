@@ -9,7 +9,6 @@ import Foundation
 import CloudKit
 
 class FetchDatabaseChangesOperation: CloudKitSynchronizerOperation {
-    
     let database: CloudKitDatabaseAdapter
     let databaseToken: CKServerChangeToken?
     let completion: (CKServerChangeToken?, [CKRecordZone.ID], [CKRecordZone.ID]) -> ()
@@ -40,7 +39,6 @@ class FetchDatabaseChangesOperation: CloudKitSynchronizerOperation {
         }
 
         databaseChangesOperation.fetchDatabaseChangesCompletionBlock = { serverChangeToken, moreComing, operationError in
-
             if !moreComing {
                 if operationError == nil {
                     self.completion(serverChangeToken, self.changedZoneIDs, self.deletedZoneIDs)

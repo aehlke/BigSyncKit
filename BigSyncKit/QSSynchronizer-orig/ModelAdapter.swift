@@ -10,7 +10,6 @@ import CloudKit
 
 /// The merge policy to resolve change conflicts. Default value is `server`
 @objc public enum MergePolicy: Int {
-    
     /// Downloaded changes have preference.
     case server
     /// Delegate can resolve changes manually.
@@ -18,20 +17,17 @@ import CloudKit
 }
 
 public extension Notification.Name {
-    
     /// Sent by the model adapter when it detects changes to some objects. The notification is sent only once, if there were no changes before and new changes were detected.
     static let ModelAdapterHasChangesNotification = Notification.Name("QSModelAdapterHasChangesNotification")
 }
 
 @objc public extension NSNotification {
-    
     /// /// Sent by the model adapter when it detects changes to some objects. The notification is sent only once, if there were no changes before and new changes were detected.
     static let ModelAdapterHasChangesNotification: NSString = "QSModelAdapterHasChangesNotification"
 }
 
 /// An object conforming to `ModelAdapter` will track the local model, provide changes to upload to CloudKit and import downloaded changes.
 @objc public protocol ModelAdapter: class {
-    
     /// Whether the model has any changes
     var hasChanges: Bool { get }
     

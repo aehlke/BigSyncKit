@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol CompanyWireframe: class {
+protocol CompanyWireframe: AnyObject {
     func show(company: Company, canEdit: Bool)
 }

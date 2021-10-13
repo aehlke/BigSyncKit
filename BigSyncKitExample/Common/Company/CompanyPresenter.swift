@@ -10,7 +10,7 @@ import UIKit
 import CloudKit
 import BigSyncKit
 
-protocol CompanyPresenter: class {
+protocol CompanyPresenter: AnyObject {
     func viewDidLoad()
     func didTapSynchronize()
     func didTapInsert()
@@ -117,7 +117,12 @@ class DefaultCompanyPresenter: NSObject, CompanyPresenter {
                 let modelObject = strongSelf.interactor.modelObject(for: company) else { return }
             
             let share = synchronizer.share(for: modelObject)
-            let container = CKContainer(identifier: synchronizer.containerIdentifier)
+            let container: CKContainer
+            if let containerIdentifier = synchronizer.containerIdentifier {
+                container = CKContainer(identifier: containerIdentifier)
+            } else {
+                container = CKContainer.default()
+            }
             let sharingController: UICloudSharingController
             if let share = share {
                 sharingController = UICloudSharingController(share: share, container: container)
@@ -173,7 +178,6 @@ extension DefaultCompanyPresenter {
 }
 
 extension DefaultCompanyPresenter: UICloudSharingControllerDelegate {
-    
     func itemTitle(for csc: UICloudSharingController) -> String? {
         return sharingCompany?.name ?? ""
     }

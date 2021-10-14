@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -83,6 +83,12 @@
 		FA525CF62712863A0016FE7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA525BB8271286360016FE7C /* LaunchScreen.storyboard */; };
 		FA525CF72712863A0016FE7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA525BB8271286360016FE7C /* LaunchScreen.storyboard */; };
 		FA525D51271326020016FE7C /* SyncedDeletable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA525D50271326020016FE7C /* SyncedDeletable.swift */; };
+		FA525D5E2717CE860016FE7C /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA525A692712245F0016FE7C /* Realm.xcframework */; };
+		FA525D602717CE860016FE7C /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA525A6D271230160016FE7C /* RealmSwift.xcframework */; };
+		FA525D632717CE910016FE7C /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA525A692712245F0016FE7C /* Realm.xcframework */; };
+		FA525D642717CE910016FE7C /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA525A692712245F0016FE7C /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA525D652717CE910016FE7C /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA525A6D271230160016FE7C /* RealmSwift.xcframework */; };
+		FA525D662717CE910016FE7C /* RealmSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA525A6D271230160016FE7C /* RealmSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +116,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				FA525A7C2712306A0016FE7C /* BigSyncKit.framework in Embed Frameworks */,
+				FA525D662717CE910016FE7C /* RealmSwift.xcframework in Embed Frameworks */,
+				FA525D642717CE910016FE7C /* Realm.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +219,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA525D5E2717CE860016FE7C /* Realm.xcframework in Frameworks */,
+				FA525D602717CE860016FE7C /* RealmSwift.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +230,8 @@
 			files = (
 				FA525A4B27120D6F0016FE7C /* CloudKit.framework in Frameworks */,
 				FA525A7B2712306A0016FE7C /* BigSyncKit.framework in Frameworks */,
+				FA525D632717CE910016FE7C /* Realm.xcframework in Frameworks */,
+				FA525D652717CE910016FE7C /* RealmSwift.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

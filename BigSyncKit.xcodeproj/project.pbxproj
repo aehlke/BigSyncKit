@@ -83,8 +83,6 @@
 		FA525CF62712863A0016FE7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA525BB8271286360016FE7C /* LaunchScreen.storyboard */; };
 		FA525CF72712863A0016FE7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA525BB8271286360016FE7C /* LaunchScreen.storyboard */; };
 		FA525D51271326020016FE7C /* SyncedDeletable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA525D50271326020016FE7C /* SyncedDeletable.swift */; };
-		FA525D5E2717CE860016FE7C /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA525A692712245F0016FE7C /* Realm.xcframework */; };
-		FA525D602717CE860016FE7C /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA525A6D271230160016FE7C /* RealmSwift.xcframework */; };
 		FA525D632717CE910016FE7C /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA525A692712245F0016FE7C /* Realm.xcframework */; };
 		FA525D642717CE910016FE7C /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA525A692712245F0016FE7C /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA525D652717CE910016FE7C /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA525A6D271230160016FE7C /* RealmSwift.xcframework */; };
@@ -219,8 +217,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA525D5E2717CE860016FE7C /* Realm.xcframework in Frameworks */,
-				FA525D602717CE860016FE7C /* RealmSwift.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,8 +749,6 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				EXCLUDED_ARCHS = arm64;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -820,8 +814,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				EXCLUDED_ARCHS = arm64;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -851,7 +843,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -889,7 +880,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

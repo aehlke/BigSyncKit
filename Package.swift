@@ -12,7 +12,7 @@ let package = Package(
     products: [
         .library(name: "BigSyncKit/RealmSwift", targets: ["BigSyncKit/RealmSwift"])],
     dependencies: [
-        .package(url: "https://github.com/realm/realm-cocoa", from: "10.7.7")
+        .package(url: "https://github.com/realm/realm-cocoa", from: "10.26.0")
     ],
     targets: [
         .target(

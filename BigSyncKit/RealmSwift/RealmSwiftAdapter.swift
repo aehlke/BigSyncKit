@@ -6,6 +6,7 @@
 //
 //
 
+import Foundation
 import UIKit
 import CloudKit
 import RealmSwift
@@ -682,7 +683,10 @@ public class RealmSwiftAdapter: NSObject, ModelAdapter {
             var entity: SyncedEntity! = syncedEntity
             while entity != nil && entity.state == state.rawValue && !includedEntityIDs.contains(entity.identifier) {
                 var parentEntity: SyncedEntity? = nil
-                let record = recordToUpload(syncedEntity: entity, realmProvider: realmProvider, parentSyncedEntity: &parentEntity)
+                guard let record = recordToUpload(syncedEntity: entity, realmProvider: realmProvider, parentSyncedEntity: &parentEntity) else {
+                    entity = nil
+                    continue
+                }
                 resultArray.append(record)
                 includedEntityIDs.insert(entity.identifier)
                 entity = parentEntity
@@ -692,7 +696,7 @@ public class RealmSwiftAdapter: NSObject, ModelAdapter {
         return resultArray
     }
     
-    func recordToUpload(syncedEntity: SyncedEntity, realmProvider: RealmProvider, parentSyncedEntity: inout SyncedEntity?) -> CKRecord {
+    func recordToUpload(syncedEntity: SyncedEntity, realmProvider: RealmProvider, parentSyncedEntity: inout SyncedEntity?) -> CKRecord? {
         let record = getRecord(for: syncedEntity) ?? CKRecord(recordType: syncedEntity.entityType, recordID: CKRecord.ID(recordName: syncedEntity.identifier, zoneID: zoneID))
         
         let objectClass = realmObjectClass(name: syncedEntity.entityType)
@@ -700,6 +704,15 @@ public class RealmSwiftAdapter: NSObject, ModelAdapter {
         let objectIdentifier = getObjectIdentifier(for: syncedEntity)
         let object = realmProvider.targetRealm.object(ofType: objectClass, forPrimaryKey: objectIdentifier)
         let entityState = syncedEntity.state
+        
+        guard let object = object else {
+            // Object does not exist, but tracking syncedEntity thinks it does.
+            // We mark it as deleted so the iCloud record will get deleted too
+            try? realmProvider.persistenceRealm.write {
+                syncedEntity.entityState = .deleted
+            }
+            return nil
+        }
         
 //        let changedKeys = (syncedEntity.changedKeys ?? "").components(separatedBy: ",")
         
@@ -710,15 +723,15 @@ public class RealmSwiftAdapter: NSObject, ModelAdapter {
         
         var parent: Object? = nil
         
-        for property in object!.objectSchema.properties {
+        for property in object.objectSchema.properties {
             if entityState == SyncedEntityState.new.rawValue || entityState == SyncedEntityState.changed.rawValue {
                 if let recordProcessingDelegate = recordProcessingDelegate,
-                   !recordProcessingDelegate.shouldProcessPropertyBeforeUpload(propertyName: property.name, object: object!, record: record) {
+                   !recordProcessingDelegate.shouldProcessPropertyBeforeUpload(propertyName: property.name, object: object, record: record) {
                     continue
                 }
                 
                 if property.type == PropertyType.object {
-                    if let target = object?.value(forKey: property.name) as? Object {
+                    if let target = object.value(forKey: property.name) as? Object {
                         let targetIdentifier = self.getStringIdentifier(for: target, usingPrimaryKey: primaryKey)
                         let referenceIdentifier = "\(property.objectClassName!).\(targetIdentifier)"
                         let recordID = CKRecord.ID(recordName: referenceIdentifier, zoneID: zoneID)
@@ -734,7 +747,7 @@ public class RealmSwiftAdapter: NSObject, ModelAdapter {
                             property.type != PropertyType.linkingObjects &&
                             !(property.name == objectClass.primaryKey()!) {
                     
-                    let value = object!.value(forKey: property.name)
+                    let value = object.value(forKey: property.name)
                     if property.type == PropertyType.data,
                         let data = value as? Data,
                         forceDataTypeInsteadOfAsset == false  {
@@ -790,7 +803,10 @@ public class RealmSwiftAdapter: NSObject, ModelAdapter {
     func childrenRecords(for syncedEntity: SyncedEntity) -> [CKRecord] {
         var records = [CKRecord]()
         var parent: SyncedEntity?
-        records.append(recordToUpload(syncedEntity: syncedEntity, realmProvider: realmProvider, parentSyncedEntity: &parent))
+        guard let record = recordToUpload(syncedEntity: syncedEntity, realmProvider: realmProvider, parentSyncedEntity: &parent) else {
+            return []
+        }
+        records.append(record)
         
         if let relationships = childRelationships[syncedEntity.entityType] {
             for relationship in relationships {

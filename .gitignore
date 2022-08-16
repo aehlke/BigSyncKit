@@ -36,3 +36,4 @@ Carthage
 *.swp
 
 Pods/
+.swiftpm/xcode/xcshareddata/xcschemes/BigSyncKit.xcscheme

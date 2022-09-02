@@ -5,6 +5,7 @@ Synchronize RealmSwift databases with CloudKit.
 Fork of [mentrena's SyncKit](https://mentrena.github.io/SyncKit) for these reasons:
 
 - Scales to larger Realm databases
+- Supports UUID primary keys
 
 The downsides that were traded off to achieve this:
 - Gives up ability to use fine-grained changed properties notifications to resolve merge conflicts. This was not a default behavior in SyncKit but could be enabled via the `client` merge policy.
